@@ -1,0 +1,10 @@
+#!/bin/bash
+
+mkdir $1/Playlists
+FILE=$1/Playlists/$2.m3u
+if test ! -f "$FILE" ; then
+    find $1 -iname "*$2*" -print | while read line ; do
+        echo "$line" >> "$FILE"
+    done 
+fi
+vlc "$FILE"
