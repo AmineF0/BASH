@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    /*int size;
+    cin >> size;
+    while(size--){
+
+    }*/
+
+    /*while(true){
+
+    }*/
+
+    int x, n, s;
+    cin >>x>> n>>s;
+    set<int> digits;
+
+    string str;
+    cin>> str;
+
+    for(char c : str)
+        digits.insert(c-'0');
+
+        int count=0;
+    for(int v=n;v<s;v++){
+        bool valid = true;
+        if(v%x==0){
+            for(int y=0; y<4;n++){
+                if(y==0 && !set.count(y%pow(10,y)))
+                    {valid=false;break;}
+                else if(!set.count((y/pow(10,y))%pow(10,y)))
+                    {valid=false;break;}
+            }
+            if(valid) count++;
+        }
+    }
+    cout << count << endl;
+
+    return 0;
+}
